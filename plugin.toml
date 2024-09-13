@@ -1,18 +1,10 @@
 author = "jimsynz"
 description = "Elixir for Lapce: powered by elixir-ls"
 display-name = "Elixir"
-icon = "elixir-logo.png"
 name = "lapce-elixir"
 repository = "jimsynz/lapce-elixir"
 version = "0.1.0"
 wasm = "lapce-elixir.wasm"
 
-[activation]
-language = ["elixir"]
-workspace-contains = [
-  "*/mix.exs",
-]
-
-[config."serverPath"]
-default = ""
-description = "Path to elixir-ls executable."
+[configuration]
+language_id = "elixir"

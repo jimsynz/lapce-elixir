@@ -1,27 +1,14 @@
 [package]
 edition = "2021"
-name = "lapce-plugin-template"
-version = "0.0.0"
-resolver = "2"
+name = "lapce-elixir"
+version = "0.1.0"
 
-[target.'cfg(target_os = "wasi")'.dependencies]
-# plugin deps
+[patch.crates-io]
+lsp-types = {git = "https://github.com/gluon-lang/lsp-types.git", tag = "v0.95.1"}
 
-# for unpacking zip
-# zip = { version = "0.6", default-features = false, features = ["deflate"] }
-
-# for unpacking tar/gz
-# flate2 = { version = "1.0" }
-
-# default deps for all lapce plugins
+[dependencies]
 anyhow = "1.0"
-serde_json = "1.0"
-serde = { version = "1.0", features = ["derive"] }
-lapce-plugin = { git = "https://github.com/lapce/lapce-plugin-rust.git" }
-# lapce-plugin = { git = "https://github.com/panekj/lapce-plugin-rust.git", branch = "volt" }
-
-[profile.release]
-opt-level = 3
-lto = true
-codegen-units = 1
-strip = true
+flate2 = "1.0.22"
+lapce-plugin = "0.1.2"
+serde = {version = "1.0", features = ["derive"]}
+serde_json = "1.0.59"
